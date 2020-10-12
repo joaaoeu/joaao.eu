@@ -1,99 +1,76 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+# <p align="left"><img src="./.github/joaaoeu-logo-dark.png" alt="JOAAOEU logo" height="50px"></p>
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+My personal website and blog. Made with [Gatsby](https://www.gatsbyjs.com/) and ❤️
 
-## 🚀 Quick start
+Available in: [www.joaao.eu](https://www.joaao.eu/)
 
-1.  **Create a Gatsby site.**
+# Stack
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)
+- [Husky](https://github.com/typicode/husky) + [lint-staged](https://github.com/commitizen/cz-cli)
+- [commitlint](https://github.com/conventional-changelog/commitlint) + [Commitizen](https://github.com/okonet/lint-staged)
+- [Gatsby](https://www.gatsbyjs.com/)
+- [React](https://reactjs.org/)
+- [GraphQL](https://graphql.org/)
+- [styled-components](https://styled-components.com/)
+- [Algolia](https://www.algolia.com/)
+- [Netlify CMS](https://www.netlifycms.org/)
+- [Netlify](https://www.netlify.com/)
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+In my frontend projects I usually add a basic `docker-compose` to facilitate the backend team or someone not used to the JS world to run the project and test, so I will do that in this project just to you know more about my work (also I used to create a `Makefile` with all comands [install, develop, docker, lint, build, build_serve, test, test:ci, etc] for the **backend** and **devops** teams) 😉
 
-1.  **Start developing.**
+# Run Locally (Development)
 
-    Navigate into your new site’s directory and start it up.
+**Requirements:** [_node 12.16.3 +_](https://nodejs.org/en/)&nbsp;, [_yarn 1.x +_](https://classic.yarnpkg.com/lang/en/).
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+Clone the repo and run `yarn` or `make install` to install, then run `yarn develop` or `make develop`.
 
-1.  **Open the source code and start editing!**
+The project will be available in http://localhost:8000 and http://127.0.0.1:8000, and in your local IP at port 8000.
 
-    Your site is now running at `http://localhost:8000`!
+## With Docker (better for the backend team tests)
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+**Requirements:** [_Docker_](https://www.docker.com/).
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+Clone the repo and run:
 
-## 🧐 What's inside?
+```
+make docker
+# or
+docker-compose up yarn_install
+docker-compose up gatsby
+```
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+# Build
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+Run `yarn build` or `make build`, then `yarn serve` or `make serve` to run the build locally.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+The project will be available in http://localhost:9000 and http://127.0.0.1:9000, and in your local IP at port 9000.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+# Commit Message
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+In this project we use [Commitlint](https://github.com/conventional-changelog/commitlint) to ensure good commit messages 😆
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+We follow the [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) rules. Any suggestion are welcomed though.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+You may commit as usual just following the rules or if wanna help use the [Commitizen](https://github.com/commitizen/cz-cli) just running `yarn cz`!
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+Before each commit [Husky 🐺](https://github.com/typicode/husky) will check your changes and will fix some ESLint and Prettier errors or in your commit message, and alert you if has any trouble.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+# License
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+This project is licensed under three different licenses (proudly inspired by [Overreacted](https://github.com/gaearon/overreacted.io) project).
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+### Website
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+See the [LICENSE-website.md](LICENSE-website.md) file for details.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+### Posts
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+See the [LICENSE-posts.md](LICENSE-posts.md) file for details.
 
-## 🎓 Learning Gatsby
+### Code-snippets
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+See the [LICENSE-code-snippets.md](LICENSE-code-snippets.md) file for details.
