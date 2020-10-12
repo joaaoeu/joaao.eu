@@ -1,0 +1,18 @@
+# Marks issues as stale after 120 days with no activity and close after 60 days with no activity and marked as stale
+name: Close Stale Issues
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: 'This issue has been automatically marked as stale since there has not been any activity in the past 120 days. If theres no new activity in 60 days this issue will be closed.'
+          stale-issue-label: 'stale'
+          days-before-stale: 120
+          days-before-close: 60
